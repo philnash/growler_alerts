@@ -1,0 +1,31 @@
+{
+  "name": "Growler Alerts",
+  "description": "Get alerts for new growler fills at Clapton Craft by SMS.",
+  "repository": "https://github.com/philnash/growler_alerts",
+  "keywords": [
+    "twilio",
+    "beer",
+    "growlers"
+  ],
+  "addons": [
+    "redistogo:nano",
+    "scheduler"
+  ],
+  "scripts": {
+    "postdeploy": "bundle exec rake beers:setup"
+  },
+  "env": {
+    "TWILIO_ACCOUNT_SID": {
+      "description": "Your Twilio Account Sid, available on your account dashboard"
+    },
+    "TWILIO_AUTH_TOKEN": {
+      "description": "Your Twilio Auth Token, available on your account dashboard"
+    },
+    "TWILIO_NUMBER": {
+      "description": "A Twilio number that is capable of sending SMS messages"
+    },
+    "MY_NUMBER": {
+      "description": "Your phone number that you want to receive alerts on"
+    }
+  }
+}
